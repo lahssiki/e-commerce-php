@@ -52,7 +52,6 @@ include "database/database.php";
         <tbody>
         <?php
                 $sql = "SELECT * FROM `e-commerce_php`.`commandes` ";
-
                 $result = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_assoc($result)) {
                 ?>

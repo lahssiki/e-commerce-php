@@ -37,17 +37,18 @@ if (isset($_GET['id'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 
     <title>Shopping Cart</title>
 </head>
-<nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #EAFF69;">
+<nav class="navbar navbar-light justify-content-center fs-3 mb-5" >
     E-commerce WebSite
 </nav>
 
 <body>
 <?php if (isset($_GET['id'])) { ?>
     <h1 class="text-center m-5">Shopping Cart</h1>
-    <div class="container">
+    <div class="container con">
         <div class="row">
             <div><h6><a href="index.php">Annule la commande</a></h6></div>
             <div class="col-sm-6">
@@ -67,7 +68,7 @@ if (isset($_GET['id'])) {
                     </div>
                 </div>
             </div>
-            <form class="m-5" method="post" action="comm.php">
+            <form class="form m-4" method="post" action="comm.php">
                 <div class="form-row">
                     <div class="form-group col-md-6 m-2">
                         <label >Nom complete</label>
