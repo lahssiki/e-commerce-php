@@ -1,5 +1,5 @@
 <?php
-include("database/database.php");
+require_once '../database/database.php';
 
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
@@ -52,18 +52,18 @@ if (isset($_POST['submit'])) {
 
 <body>
     <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #EAFF69;">
-        E-commerce WebSite
+        Dashboard Admin
     </nav>
     <nav class="navbar navbar-light justify-content-center">
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link active" href="index.php">Index</a>
+                <a class="nav-link active" href="../index.php">Index</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="ajouter_produit.php">Add Produit</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="admin.php">Dashboard Admin</a>
+                <a class="nav-link active" href="commandes.php">Commandes</a>
             </li>
         </ul>
     </nav>
