@@ -22,7 +22,7 @@ section {
 li.nav-item {
   margin-right: 30px;
 }
-h5:hover {
+.navil:hover {
   color: red;
   cursor: pointer;
   text-decoration: underline;

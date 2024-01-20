@@ -16,27 +16,12 @@ if (isset($_GET['id'])) {
 } else {
     $error_message = "Product ID not provided.";
 }
+
+include "./layouts/head.php";
+include "./layouts/nav.php";
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-
-    <title>Cart</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-light justify-content-center fs-3 mb-5">
-        E-commerce WebSite
-    </nav>
-    
+<body>    
     <?php if (isset($_GET['id'])) { ?>
     <h1 class="text-center">Cart</h1>
     <a class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover m-3 d-flex flex-row-reverse" href="index.php">Annuler la commande</a>
@@ -67,9 +52,9 @@ if (isset($_GET['id'])) {
             </div>
     </div>
     <?php 
-    } else {?>
-        <H1 class ="text-center" >Not Found 404 :/</H1>
-    <?php }?>
+    } else {
+        include "./404-403/page_404.php";
+     }?>
 
     <script>
         function updateTotalPrix() {

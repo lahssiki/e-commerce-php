@@ -7,7 +7,7 @@ include "./layouts/nav.php"
 
 <body>
 <?php include "./layouts/hero.php" ?> <!-- hero section -->
-<?php include "./card-produits.php" ?> <!-- products section -->
+<?php include "./page/card-produits.php" ?> <!-- products section -->
 <?php include "./layouts/footer.php"?> <!-- footer section -->
     
     <!-- Bootstrap -->
