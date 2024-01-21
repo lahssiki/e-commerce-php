@@ -12,6 +12,3 @@
         {
             die("MADAEATCH CONNXION DATABASE: " . mysqli_connect_error());
         }
-        
-
-?>

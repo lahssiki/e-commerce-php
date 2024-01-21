@@ -46,3 +46,7 @@ h1:hover{
 .hero{
   background-color:#efefef;
 }
+
+.lien{
+  display: none;
+}

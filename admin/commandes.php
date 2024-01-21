@@ -1,6 +1,7 @@
 <?php
+session_start();
 require_once '../database/database.php';
-
+if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,22 +19,6 @@ require_once '../database/database.php';
 </head>
 
 <body>
-    <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #EAFF69;">
-        E-commerce WebSite
-    </nav>
-    <nav class="navbar navbar-light justify-content-center">
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link active" href="index.php">Index</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="ajouter_produit.php">Add Produit</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="admin.php">Dashboard Admin</a>
-            </li>
-        </ul>
-    </nav>
 </body>
 <div class="text-center">
     <h1>Commandes</h1>
@@ -69,5 +54,8 @@ require_once '../database/database.php';
 
     </table>
 </div>
-
+<?php } else {
+    header("Location:../index.php");
+    exit();
+} ?>
 </html>

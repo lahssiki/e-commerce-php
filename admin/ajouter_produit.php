@@ -1,6 +1,7 @@
 <?php
+session_start();
 require_once '../database/database.php';
-
+if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
@@ -98,5 +99,9 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
 </body>
+<?php } else {
+    header("Location:../index.php");
+    exit();
+} ?>
 
 </html>
