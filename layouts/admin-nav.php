@@ -7,16 +7,16 @@
     <div class="collapse navbar-collapse " id="navbarText">
       <ul class="navbar-nav ">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../admin/dashboard.php"><h5 class="navil">Dashboard</h5></a>
+          <a class="nav-link active" aria-current="page" href="../admin/dashboard.php"><h5 class="navil">Dashboard <i class="fa-solid fa-chart-line fa-sm"></i></h5></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="../admin/ajouter_produit.php"><h5 class="navil">Ajouter Produit</h5></a>
+          <a class="nav-link active" href="../admin/ajouter_produit.php"><h5 class="navil">Ajouter Produit <i class="fa-solid fa-circle-plus fa-sm"></i></h5></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="../admin/commandes.php"><h5 class="navil">Commandes</h5></a>
+          <a class="nav-link active" href="../admin/commandes.php"><h5 class="navil">Commandes <i class="fa-solid fa-list-check fa-sm"></i></h5></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="../index.php"><h5 class="navil">Index</h5></a>
+          <a class="nav-link active" href="../index.php"><h5 class="navil">Home <i class="fa-solid fa-house fa-sm"></i></h5></a>
         </li>
       </ul>
     </div>
