@@ -4,7 +4,7 @@ require_once '../database/database.php';
 
 if (isset($_SESSION['id']) && isset($_SESSION['email'])) {
     include "../layouts/head.php";
-    include "../layouts/nav.php"
+    include "../layouts/admin-nav.php"
 ?>
     <body>
              <div class="alert alert-info text-center" role="alert">

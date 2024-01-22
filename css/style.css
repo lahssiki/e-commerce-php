@@ -1,5 +1,7 @@
 /* styles.css */
-*, :after, :before {
+*,
+:after,
+:before {
   box-sizing: border-box;
 }
 .img-fluid {
@@ -13,17 +15,15 @@
 section {
   display: block;
 }
-.navbar-collapse{
+.navbar-collapse {
   justify-content: center;
 }
-.a:hover{
-  color: green;
-}
+
 li.nav-item {
   margin-right: 30px;
 }
 .navil:hover {
-  color: red;
+  color: #76ba9a;
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold;
@@ -32,21 +32,15 @@ li.nav-item {
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
-
 }
 
-h1:hover{
+h1:hover {
   color: #ffc107;
   cursor: pointer;
 }
-.fawa{
-  
+.fawa {
   color: #198754;
 }
-.hero{
-  background-color:#efefef;
-}
-
-.lien{
-  display: none;
+.hero {
+  background-color: #efefef;
 }

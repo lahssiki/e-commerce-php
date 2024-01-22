@@ -7,11 +7,11 @@
         </div>
         <div class="row g-4 row-cols-lg-5 row-cols-2 row-cols-md-3">
 
-        <?php
-        $sql = "SELECT * FROM `e-commerce_php`.`produits` ";
-        $result = mysqli_query($conn, $sql);
-        while ($row = mysqli_fetch_assoc($result)) {
-        ?>
+            <?php
+            $sql = "SELECT * FROM `e-commerce_php`.`produits` ";
+            $result = mysqli_query($conn, $sql);
+            while ($row = mysqli_fetch_assoc($result)) {
+            ?>
                 <div class="col">
                     <div class="card card-product">
 
@@ -20,7 +20,7 @@
                                 <div class="position-absolute top-0 start-0">
                                     <span class="badge bg-danger">Sale</span>
                                 </div>
-                                <a href="cart.php?id=<?php echo $row["id"] ?>"><img  src="<?php echo $row["image"] ?>" alt="" class="mb-3 img-fluid" /></a>
+                                <a href="cart.php?id=<?php echo $row["id"] ?>"><img src="<?php echo $row["image"] ?>" alt="" class="mb-3 img-fluid" /></a>
                             </div>
                             <div class="text-small mb-1">
                                 <a href="#!" class="text-decoration-none text-muted"><small>Snack & Munchies</small></a>
