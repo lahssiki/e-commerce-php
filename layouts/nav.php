@@ -13,7 +13,7 @@
           <a class="nav-link active" href="../page/Shop.php"><h5 class="navil">Shop <i class="fa-solid fa-shop fa-sm"></i></h5></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#"><h5 class="navil">cart <i class="fa-solid fa-cart-shopping fa-sm"></i></h5></a>
+          <a class="nav-link active" href="../page/cart.php"><h5 class="navil">cart <i class="fa-solid fa-cart-shopping fa-sm"></i></h5></a>
         </li>
       </ul>
     </div>

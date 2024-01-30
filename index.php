@@ -1,5 +1,41 @@
 <?php
+session_start();
+
 include "database/database.php";
+
+
+if (isset($_POST['add_to_cart'])) {
+  if (isset($_SESSION['cart'])) {
+      $session_array_id = array_column($_SESSION['cart'], "id");
+
+      if (!in_array($_POST['id'], $session_array_id)) {
+          $session_array = array(
+              "id" => $_POST['id'],
+              "name" => $_POST['name'],
+              "image" => $_POST['image'],
+              "description" => $_POST['description'],
+              "prix" => $_POST['prix'],
+              "quantite" => $_POST['quantite'],
+          );
+          $_SESSION['cart'][] = $session_array;
+      } else {
+          // Find the index of the existing item in the cart
+          $index = array_search($_POST['id'], $session_array_id);
+      }
+  } else {
+      // If the cart is not set, create a new cart with the current item
+      $session_array = array(
+          "id" => $_POST['id'],
+          "name" => $_POST['name'],
+          "image" => $_POST['image'],
+          "description" => $_POST['description'],
+          "prix" => $_POST['prix'],
+          "quantite" => $_POST['quantite'],
+
+      );
+      $_SESSION['cart'][] = $session_array;
+  }
+}
 ?>
 <head>
     <meta charset="UTF-8">
@@ -8,7 +44,6 @@ include "database/database.php";
     <meta name="theme-color" content="#712cf9">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
@@ -29,7 +64,12 @@ include "database/database.php";
           <a class="nav-link active" href="./page/Shop.php"><h5 class="navil">Shop <i class="fa-solid fa-shop fa-sm"></i></h5></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#"><h5 class="navil">cart <i class="fa-solid fa-cart-shopping fa-sm"></i></h5></a>
+          <a class="nav-link active" href="./page/cart.php"><h5 class="navil">cart 
+            <?php    
+              if (isset($_SESSION['cart'])){$count  = count($_SESSION['cart']);?>
+                <span class="badge badge-light" style="color : red;"><?php echo "$count";}else{ echo "";}?></span>
+              <i class="fa-solid fa-cart-shopping fa-sm"></i></h5>
+          </a>
         </li>
       </ul>
     </div>

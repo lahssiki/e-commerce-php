@@ -1,5 +1,5 @@
 <?php
-include "./database/database.php";
+include_once "../database/database.php";
 
 // Check if the product ID is provided in the URL
 if (isset($_GET['id'])) {
@@ -14,19 +14,17 @@ if (isset($_GET['id'])) {
     } else {
         $error_message = "Product not found.";
     }
-} else {
-    $error_message = "Product ID not provided.";
-} 
-
 
     $quantite = isset($_GET['quantite']) ? $_GET['quantite'] : 1;
     $totalPrix = isset($_GET['totalPrix']) ? $_GET['totalPrix'] : $row['prix'] * $quantite;
 
+}     
+
 //-----------------------------------------------------
 
    
-include "./layouts/head.php";
-include "./layouts/nav.php";
+include "../layouts/head.php";
+include "../layouts/nav.php";
 
 ?>
 
@@ -36,7 +34,7 @@ include "./layouts/nav.php";
     <h1 class="text-center m-5">Shopping Cart</h1>
     <div class="container con">
         <div class="row">
-            <div><h6><a href="index.php">Annule la commande</a></h6></div>
+            <div><h6><a href="../index.php">Annule la commande</a></h6></div>
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
@@ -51,10 +49,8 @@ include "./layouts/nav.php";
                     <div class="card-body">
                         <h5 class="card-text">Quantity: <?php echo $quantite; ?></h5>
                         <h4 class="card-text justify-content-center">Total Prix: <?php echo $totalPrix; ?> DH</h4>
-                    </div>
-                </div>
-            </div>
-            <form class="form m-4" method="post" action="comm.php">
+                        <!--form-->
+                                    <form class="form m-4" method="post" action="comm.php">
                 <div class="form-row">
                     <div class="form-group col-md-6 m-2">
                         <label >Nom complete</label>
@@ -91,16 +87,21 @@ include "./layouts/nav.php";
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary m-2">Valide la commande</button>
             </form>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
         <?php 
     } else {
-        include "./404-403/page_404.php";
-    }
-    include "./layouts/footer.php";
+        include "../404-403/empty_cart.php";
+    }   include "../layouts/footer.php"
     ?>
         <!-- Bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 </body>
+
 
 </html>
