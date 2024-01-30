@@ -16,6 +16,8 @@
 ![Capture d’écran (130)](https://github.com/lahssiki/e-commerce-php/assets/81477694/2ad8e571-4aac-4297-a479-6ea84657e676)
 
 ###  Cart
+![Capture d’écran (131)](https://github.com/lahssiki/e-commerce-php/assets/81477694/a7c269ec-4031-46ba-83ba-32f7bc971b0a)
+
 
 
 
