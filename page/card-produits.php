@@ -11,7 +11,7 @@
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
             ?>
-                <form class="col" method="POST" action="index.php">
+                <form class="col" id="addtocart" method="POST" action="index.php">
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                     <input type="hidden" name="name" value="<?php echo $row['name']; ?>">
                     <input type="hidden" name="image" value="<?php echo $row['image']; ?>">
@@ -50,7 +50,7 @@
                                         <span class="text-dark"><?php echo $row["prix"] ?> DH</span>
                                     </div>
                                     <div>
-                                        <button type="submit" name="add_to_cart" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus fa-sm"></i> Add To Cart</button>
+                                        <button type="submit"  name="add_to_cart" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus fa-sm"></i> Add To Cart</button>
                                     </div>
                                 </div>
                             </div>

@@ -13,7 +13,11 @@
           <a class="nav-link active" href="../page/Shop.php"><h5 class="navil">Shop <i class="fa-solid fa-shop fa-sm"></i></h5></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="../page/cart.php"><h5 class="navil">cart <i class="fa-solid fa-cart-shopping fa-sm"></i></h5></a>
+          <a class="nav-link active" href="../page/cart.php"><h5 class="navil">cart
+          <?php    
+              if (isset($_SESSION['cart'])){$count  = count($_SESSION['cart']);?>
+                <span class="badge rounded-pill text-bg-danger" ><?php echo "$count";}else{ echo "";}?></span>
+             <i class="fa-solid fa-cart-shopping fa-sm"></i></h5></a>
         </li>
       </ul>
     </div>

@@ -1,26 +1,6 @@
 <?php
+session_start();
 include_once "../database/database.php";
-
-// Check if the product ID is provided in the URL
-if (isset($_GET['id'])) {
-    $product_id = $_GET['id'];
-
-    // Fetch product details from the database based on the product ID
-    $sql = "SELECT * FROM `e-commerce_php`.`produits` WHERE id = $product_id";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-    } else {
-        $error_message = "Product not found.";
-    }
-
-    $quantite = isset($_GET['quantite']) ? $_GET['quantite'] : 1;
-    $totalPrix = isset($_GET['totalPrix']) ? $_GET['totalPrix'] : $row['prix'] * $quantite;
-
-}     
-
-//-----------------------------------------------------
 
    
 include "../layouts/head.php";

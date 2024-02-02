@@ -31,7 +31,7 @@ include "../layouts/nav.php";
                             <p class="card-text col-6"><?php echo $value["description"] ?></p>
                             <h5 class="card-text col d-flex flex-row-reverse">Prix : <?php echo $value["prix"] ?>.00 DH
                             </h5>
-                            <h5 class="card-text col d-flex flex-row-reverse">
+                            <h5 id="quantite" class="card-text col d-flex flex-row-reverse">
                                 Quantite : <?php echo $value['quantite']; ?>
                             </h5>
                             <hr>
@@ -48,7 +48,7 @@ include "../layouts/nav.php";
                         <h5 class="card-title">Mon Panier</h5>
                         <h5 class="card-text">Total :
                             <?php echo $total; ?> DH <span id="totalPrix"></span></h5>
-                        <button class="col btn btn-success d-flex flex-row-reverse" onclick="proceedToCommandes()">Proceed
+                        <button class="col btn btn-success d-flex flex-row-reverse" onclick="">Proceed
                             to Commandes
                         </button>
                     </div>
@@ -62,22 +62,6 @@ include "../layouts/nav.php";
     include "../layouts/footer.php";
     ?>
 
-    <script>
-        function proceedToCommandes() {
-            var quantites = document.querySelectorAll('input[name="quantite"]');
-            var productId = []; // Array to hold product IDs
-            var quantities = []; // Array to hold quantities
-
-            // Extract product IDs and quantities
-            quantites.forEach(function(input) {
-                productId.push(input.dataset.productId); // Assuming each input has a data-product-id attribute
-                quantities.push(input.value);
-            });
-
-            // Redirect to checkout page with product IDs and quantities
-            window.location.href = 'checkout.php?productId=' + productId.join(',') + '&quantities=' + quantities.join(',');
-        }
-    </script>
 </body>
 
 </html>
