@@ -48,9 +48,9 @@ include "../layouts/nav.php";
                         <h5 class="card-title">Mon Panier</h5>
                         <h5 class="card-text">Total :
                             <?php echo $total; ?> DH <span id="totalPrix"></span></h5>
-                        <button class="col btn btn-success d-flex flex-row-reverse" onclick="">Proceed
+                        <a href="http://localhost/E-commerce_php/page/checkout.php" class="col btn btn-success">Proceed
                             to Commandes
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include "../database/database.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -55,3 +57,39 @@ include "../layouts/nav.php";
         <hr>
         <p>Vous serez dirigé vers la page d'accueil après 5 secondes...</p>
     </div>
+
+<?php 
+
+// Vérifier si le panier existe dans la session
+if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+    echo "Le panier est vide.";
+    exit; // Sortir du script si le panier est vide
+}
+
+// Récupérer les données du panier depuis la session
+$cart = $_SESSION['cart'];
+
+// Insérer les données du panier dans la table de commandes
+foreach ($cart as $item) {
+    $nomProduit = $conn->real_escape_string($item['nomProduit']);
+    $prixProduit = $conn->real_escape_string($item['prixProduit']);
+    
+    // Requête d'insertion SQL
+    $sql = "INSERT INTO commande (nom_produit, prix_produit) VALUES ('$nomProduit', '$prixProduit')";
+    
+    if ($conn->query($sql) !== TRUE) {
+        echo "Erreur lors de l'insertion dans la base de données : " . $conn->error;
+        $conn->close();
+        exit;
+    }
+}
+
+// Effacer le panier dans la session après l'insertion dans la base de données
+unset($_SESSION['cart']);
+
+// Afficher un message de succès
+echo "Les données du panier ont été insérées dans la base de données avec succès.";
+
+// Fermer la connexion à la base de données
+$conn->close();
+?>

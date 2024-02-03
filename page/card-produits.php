@@ -1,4 +1,4 @@
-<section class="my-lg-14 my-8">
+<section id="1" class="my-lg-14 my-8">
     <div class="container">
         <div class="row">
             <div class="col-12 mb-6">
@@ -10,6 +10,7 @@
             $sql = "SELECT * FROM `e-commerce_php`.`produits` ";
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
+                $id = $row['id'];
             ?>
                 <form class="col" id="addtocart" method="POST" action="index.php">
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">

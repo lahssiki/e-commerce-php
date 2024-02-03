@@ -16,4 +16,4 @@ if (isset($_GET['id'])) {
 }
 
 header('Location: http://localhost/E-commerce_php/page/cart.php');
-  exit();
+exit();

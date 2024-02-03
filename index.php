@@ -35,7 +35,10 @@ if (isset($_POST['add_to_cart'])) {
       );
       $_SESSION['cart'][] = $session_array;
   }
+  header('Location: http://localhost/E-commerce_php/index.php#1');
+
 }
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -48,6 +51,7 @@ if (isset($_POST['add_to_cart'])) {
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>E-commerce WebSite</title>
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -80,23 +84,7 @@ if (isset($_POST['add_to_cart'])) {
 <?php include "./layouts/hero.php" ?> <!-- hero section -->
 <?php include "./page/card-produits.php" ?> <!-- products section -->
 <?php include "./layouts/footer.php"?> <!-- footer section -->
-    
-   <script>
-    $(document).ready(function(){
-      $('#addtocart').submit(function(e){
-        e.preventDefault();
-        
-        $.ajax({
-          type: 'POST',
-          url: 'index.php',
-          data: $('#addtocart').serialize(),
-          success: function(response){
-            console.log(response);
-          }
-        });
-      });
-    });
-   </script>
+<script src="js/script.js"></script>
 </body>
 
 </html>
