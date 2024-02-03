@@ -4,9 +4,7 @@ function addToCart(id) {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            // تحديث واجهة المستخدم بناءً على الرد
             var response = xhr.responseText;
-            // على سبيل المثال، يمكنك تحديث عدد المنتجات في البطاقة
             document.getElementById("cartCount").innerText = response;
         }
     };
